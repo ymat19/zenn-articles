@@ -1,5 +1,5 @@
 ---
-title: "Windows Powershell環境でtmuxを使うツール"
+title: "Windows Powershell環境でtmuxを使うツールを公開しました"
 emoji: "💨"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["Windows", "tmux", "WSL"]
