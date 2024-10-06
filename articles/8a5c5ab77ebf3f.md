@@ -10,8 +10,8 @@ published: false
 
 https://github.com/ymat19/PoshOnTmux
 
-Windows Powershell環境で、ペイン操作をtmuxでしたい方のための記事です。
-タイトルは正確ではなくて、正しくは `WSLで動かすtmux上で、ホスト側のPowershellを扱うツール` です。
+Windows Powershell環境で、tmuxを使ったペイン操作をしたい方のための記事です。
+タイトルは正確ではなく、正しくは `WSLで動かすtmux上で、ホスト側のPowershellを扱うツール` です。
 
 ※  後述しますが、セッション管理などのマルチプレクサ機能は現状扱えません。
 
@@ -24,11 +24,11 @@ Windows Powershell環境で、ペイン操作をtmuxでしたい方のための�
 以下のような方々が対象です。
 
 - WindowsネイティブのPowershellで作業をする必要がある
-  - WSL上のPowershellではうまく動かない秘伝のps1
+  - WSL上のPowershellではうまく動かない伝統ののps1
   - ネイティブのdotnetでしかビルドできないC#プロジェクト
-- Windowsターミナル等のペイン操作に不満がある
+- Windows Terminal等のペイン操作に不満がある
   - Leaderキーを定義したい
-  - Mac等の他環境とキーバインドを統一したい
+  - Macなどの他環境とキーバインドを統一したい
 
 ## 使い方
 
@@ -49,7 +49,7 @@ wsl -d PoshOnTmux
 ```
 
 また、Windowsターミナルなら再起動すると勝手にプロファイルが追加されます。
-![](/images//poshOnTmuxImage.png)
+![](/images/poshOnTmuxImage.png)
 
 ### 設定ファイル
 
@@ -76,7 +76,7 @@ wsl --unregister -d PoshOnTmux
 1. **WSL1でAlpine Linuxインスタンスを立ち上げる**
 2. **tmuxでWindows側のPowerShellを起動** 
 
-※ 私自身、最近まで知らなかったので補足ですが、WSLはexeを叩くとホスト側で起動してくれます。
+※ 私自身、最近まで知らなかったので補足ですが、WSLはexeを叩くとホスト側で実行してくれます。
 
 #### なぜWSL1なのか
 
@@ -87,17 +87,17 @@ WindowsのカーネルAPIでLinuxのシステムコールを再現
 - WSL2
 ハイパーバイザ式の仮想環境でLinuxカーネルを用意
 
-WSL1は互換性に問題があり、今ではWSL2がデファクトになりましたが、本ツールのようにシンプルなことをするだけならWSL1の方がオーバーヘッドが小さく、適してます。
+WSL1は互換性に問題があり、今ではWSL2が主流になりましたが、本ツールのようにシンプルなことをするだけならWSL1でも問題なく、さらにオーバーヘッドが小さく適してます。
 
 #### PowershellはCore版？
 
-Core版があればそっちを起動します。なければプリインストールの方を立ち上げます。
+Core版があればそれを起動します。なければプリインストールの方を立ち上げます。
 https://github.com/ymat19/PoshOnTmux/blob/4d0ec8207b71a3e13e704d870074de8a7a516f50/setup.sh#L14
 
 ### 制限事項：できないこと
 
 - **セッションの維持ができない**  
-  ターミナルを閉じるとセッションが終了します。起動時は毎回新しいセッションを作るようにしてます。
+  ターミナルを閉じるとセッションが終了します。起動時は毎回新しいセッションを作成します。
   参考にした元スクリプトでは、起動時に既存セッションに再接続するようになっていたのですが、試してみるとなぜかちょくちょく固まるので、コメントアウトしてます。
   (tmuxやLinux側ではなく、Powershell側が固まっており、原因不明)
   https://github.com/ymat19/PoshOnTmux/blob/4d0ec8207b71a3e13e704d870074de8a7a516f50/setup.sh#L21
