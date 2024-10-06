@@ -2,11 +2,11 @@
 title: "Windows Powershell環境でtmuxを使うツール"
 emoji: "💨"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["Windows", "tmux"]
+topics: ["Windows", "tmux", "WSL"]
 published: false
 ---
 
-# Windows Powershell環境でtmuxを使うツール
+# Windows Powershell環境でtmuxを使うツールを作りました
 
 https://github.com/ymat19/PoshOnTmux
 
@@ -92,6 +92,7 @@ WSL1は互換性に問題があり、今ではWSL2が主流になりましたが
 #### PowershellはCore版？
 
 Core版があればそれを起動します。なければプリインストールの方を立ち上げます。
+
 https://github.com/ymat19/PoshOnTmux/blob/4d0ec8207b71a3e13e704d870074de8a7a516f50/setup.sh#L14
 
 ### 制限事項：できないこと
@@ -100,7 +101,8 @@ https://github.com/ymat19/PoshOnTmux/blob/4d0ec8207b71a3e13e704d870074de8a7a516f
   ターミナルを閉じるとセッションが終了します。起動時は毎回新しいセッションを作成します。
   参考にした元スクリプトでは、起動時に既存セッションに再接続するようになっていたのですが、試してみるとなぜかちょくちょく固まるので、コメントアウトしてます。
   (tmuxやLinux側ではなく、Powershell側が固まっており、原因不明)
-  https://github.com/ymat19/PoshOnTmux/blob/4d0ec8207b71a3e13e704d870074de8a7a516f50/setup.sh#L21
+
+https://github.com/ymat19/PoshOnTmux/blob/4d0ec8207b71a3e13e704d870074de8a7a516f50/setup.sh#L21
 
 ## 参考
 
