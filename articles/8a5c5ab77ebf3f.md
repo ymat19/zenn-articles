@@ -3,7 +3,7 @@ title: "Windows Powershell環境でtmuxを使うツール"
 emoji: "💨"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["Windows", "tmux", "WSL"]
-published: false
+published: true
 ---
 
 # Windows Powershell環境でtmuxを使うツールを作りました
@@ -107,6 +107,12 @@ https://github.com/ymat19/PoshOnTmux/blob/4d0ec8207b71a3e13e704d870074de8a7a516f
   (tmuxやLinux側ではなく、Powershell側が固まっており、原因不明)
 
 https://github.com/ymat19/PoshOnTmux/blob/4d0ec8207b71a3e13e704d870074de8a7a516f50/setup.sh#L21
+
+## おわりに
+
+最後までお読みいただきありがとうございました！
+こういったツールを公開するのは初めてなので、不手際等あるかもしれません。
+何か問題あればご指摘いただけると嬉しいです。
 
 ## 参考
 
