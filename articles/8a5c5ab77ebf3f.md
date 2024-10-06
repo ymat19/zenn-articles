@@ -11,7 +11,7 @@ published: false
 https://github.com/ymat19/PoshOnTmux
 
 Windowsでペイン操作をTmuxでしたい方のための記事です。
-タイトルは正確ではなくて、正しくは `WSLで動かすTmux上で、ホストのPowershellを扱うツール` です。
+タイトルは正確ではなくて、正しくは `WSLで動かすTmux上で、ホスト側のPowershellを扱うツール` です。
 
 ## はじめに
 
@@ -34,7 +34,7 @@ Windowsでペイン操作をTmuxでしたい方のための記事です。
 以下のコマンドを実行して、ツールをインストールします。
 
 ```powershell
-powershell -c "iwr https://raw.githubusercontent.com/ymat19/PoshOnTmux/main/install.ps1 -UseBasicParsing | iex"
+powershell -ExecutionPolicy Bypass -c "iwr https://raw.githubusercontent.com/ymat19/PoshOnTmux/main/install.ps1 -UseBasicParsing | iex"
 ```
 
 ### 起動方法
@@ -46,7 +46,7 @@ wsl -d PoshOnTmux
 ```
 
 また、Windowsターミナルなら再起動すると勝手にプロファイルが追加されます。
-![プロファイル](./img/poshOnTmuxImage.png)
+![](../images//poshOnTmuxImage.png)
 
 ### 設定ファイル
 
@@ -64,7 +64,7 @@ wsl -d PoshOnTmux
 wsl --unregister -d PoshOnTmux
 ```
 
-## その他
+## 補足
 
 ### ツールが何をしているのか
 
@@ -87,8 +87,6 @@ WindowsのカーネルAPIでLinuxのカーネルAPIを再現
 WSL1は互換性が微妙なまま今日にいたり、今ではWSL2がデファクトになりましたが、本ツールのようにシンプルなことをするだけならWSL1の方がオーバーヘッドが小さく、適してます。
 
 ### 制限事項：できないこと
-
-> **注意**: このツールは、ペイン操作に特化しており、tmuxのセッション管理や他の高度なマルチプレクサ機能にはあまり対応していません。
 
 - **セッションの維持ができない**  
   ターミナルを閉じるとセッションが終了します。起動時は毎回新しいセッションを作るようにしてます。
