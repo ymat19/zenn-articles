@@ -11,13 +11,14 @@ published: false
 https://github.com/ymat19/PoshOnTmux
 
 Windows Powershell環境で、tmuxを使ったペイン操作をしたい方のための記事です。
-タイトルは正確ではなく、正しくは `WSLで動かすtmux上で、ホスト側のPowershellを扱うツール` です。
+タイトルは正確ではなく、正しくは以下です。
+`WSLで動かすtmux上で、ホスト側のPowershellを扱うツール`
 
-※  後述しますが、セッション管理などのマルチプレクサ機能は現状扱えません。
+※  **後述しますが、セッション管理などのマルチプレクサ機能は現状扱えません。**
 
 ## はじめに
 
-本記事で紹介するツールは、[こちらのSuperUsern内のNotTheDr01ds氏による書き込み](https://superuser.com/a/1643117) に基づいています。これを今日の環境で動作するように修正し、さらに作業を自動化したものです。
+本記事で紹介するツールは、[こちらのSuperUsern内のNotTheDr01ds氏による書き込み](https://superuser.com/a/1643117) に基づいています。これを今日の環境で動作するように修正し、セットアップを自動化したものです。
 
 ## 想定ユーザ
 
@@ -28,7 +29,7 @@ Windows Powershell環境で、tmuxを使ったペイン操作をしたい方の�
   - ネイティブのdotnetでしかビルドできないC#プロジェクト
 - Windows Terminal等のペイン操作に不満がある
   - Leaderキーを定義したい
-  - Macなどの他環境とキーバインドを統一したい
+  - Macなどtmuxのある他環境とキーバインドを統一したい
 
 ## 使い方
 
@@ -50,6 +51,9 @@ wsl -d PoshOnTmux
 
 また、Windowsターミナルなら再起動すると勝手にプロファイルが追加されます。
 ![](/images/poshOnTmuxImage.png)
+
+`Ctrl-b %` などしてペインが出てきたら正しくインストールできてます。
+![](/images/poshOnTmuxImage2.png)
 
 ### 設定ファイル
 
