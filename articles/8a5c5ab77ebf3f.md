@@ -46,7 +46,7 @@ wsl -d PoshOnTmux
 ```
 
 また、Windowsターミナルなら再起動すると勝手にプロファイルが追加されます。
-![](../images//poshOnTmuxImage.png)
+![](/images//poshOnTmuxImage.png)
 
 ### 設定ファイル
 
