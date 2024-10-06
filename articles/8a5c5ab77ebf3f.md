@@ -10,8 +10,10 @@ published: false
 
 https://github.com/ymat19/PoshOnTmux
 
-Windowsでペイン操作をtmuxでしたい方のための記事です。
+Windows Powershell環境で、ペイン操作をtmuxでしたい方のための記事です。
 タイトルは正確ではなくて、正しくは `WSLで動かすtmux上で、ホスト側のPowershellを扱うツール` です。
+
+※  後述しますが、セッション管理などのマルチプレクサ機能は現状扱えません。
 
 ## はじめに
 
@@ -70,7 +72,7 @@ wsl --unregister -d PoshOnTmux
 
 このツールは、次のステップで動作します。
 
-1. **WSL1でAlpine Linuxインスタンスを立ち上げ**、その中でtmuxを起動
+1. **WSL1でAlpine Linuxインスタンスを立ち上げる**
 2. **tmuxでWindows側のPowerShellを起動** 
 
 ※ 私自身、最近まで知らなかったので補足ですが、WSLはexeを叩くとホスト側で起動してくれます。
@@ -80,7 +82,7 @@ wsl --unregister -d PoshOnTmux
 WSL2をWSL1の進化版としてとらえている方もいるかもしれませんが、以下のように動作原理がかなり異なります
 
 - WSL1
-WindowsのカーネルAPIでLinuxのカーネルAPIを再現
+WindowsのカーネルAPIでLinuxのシステムコールを再現
 - WSL2
 ハイパーバイザ式の仮想環境でLinuxカーネルを用意
 
@@ -90,8 +92,9 @@ WSL1は互換性が微妙なまま今日にいたり、今ではWSL2がデファ
 
 - **セッションの維持ができない**  
   ターミナルを閉じるとセッションが終了します。起動時は毎回新しいセッションを作るようにしてます。
-  参考にした元スクリプトでは、起動時に既存セッションに再接続するようになっていたのですが、試してみるとなぜかちょくちょく固まります。
+  参考にした元スクリプトでは、起動時に既存セッションに再接続するようになっていたのですが、試してみるとなぜかちょくちょく固まるので、コメントアウトしてます。
   (tmuxやLinux側ではなく、Powershell側が固まっており、原因不明)
+  https://github.com/ymat19/PoshOnTmux/blob/4d0ec8207b71a3e13e704d870074de8a7a516f50/setup.sh#L21
 
 ## 参考
 
