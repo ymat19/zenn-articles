@@ -1,17 +1,17 @@
 ---
-title: "Windows Powershell環境でTmuxを使うツール"
+title: "Windows Powershell環境でtmuxを使うツール"
 emoji: "💨"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: []
+topics: ["Windows", "tmux"]
 published: false
 ---
 
-# Windows Powershell環境でTmuxを使うツール
+# Windows Powershell環境でtmuxを使うツール
 
 https://github.com/ymat19/PoshOnTmux
 
-Windowsでペイン操作をTmuxでしたい方のための記事です。
-タイトルは正確ではなくて、正しくは `WSLで動かすTmux上で、ホスト側のPowershellを扱うツール` です。
+Windowsでペイン操作をtmuxでしたい方のための記事です。
+タイトルは正確ではなくて、正しくは `WSLで動かすtmux上で、ホスト側のPowershellを扱うツール` です。
 
 ## はじめに
 
